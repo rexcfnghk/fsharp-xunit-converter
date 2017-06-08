@@ -1,0 +1,35 @@
+source https://dotnet.myget.org/F/dotnet-core/api/v3/index.json
+source https://dotnet.myget.org/F/cli-deps/api/v3/index.json
+source https://api.nuget.org/v3/index.json
+framework >= net47
+
+nuget FsCheck.Xunit 2.9.0
+nuget Microsoft.NETCore.Platforms 1.1.0
+nuget NETStandard.Library 1.6.1
+nuget System.Collections 4.3.0
+nuget System.Diagnostics.Debug 4.3.0
+nuget System.Diagnostics.Tools 4.3.0
+nuget System.Globalization 4.3.0
+nuget System.Linq 4.3.0
+nuget System.Linq.Expressions 4.3.0
+nuget System.Linq.Queryable 4.3.0
+nuget System.Net.Primitives 4.3.0
+nuget System.Net.Requests 4.3.0
+nuget System.ObjectModel 4.3.0
+nuget System.Reflection 4.3.0
+nuget System.Reflection.Extensions 4.3.0
+nuget System.Reflection.Primitives 4.3.0
+nuget System.Resources.ResourceManager 4.3.0
+nuget System.Runtime.Extensions 4.3.0
+nuget System.Text.Encoding 4.3.0
+nuget System.Text.Encoding.Extensions 4.3.0
+nuget System.Text.RegularExpressions 4.3.0
+nuget System.Threading 4.3.0
+nuget System.Threading.Tasks 4.3.0
+nuget System.Threading.Tasks.Parallel 4.3.0
+nuget System.Threading.Thread 4.3.0
+nuget System.Threading.ThreadPool 4.3.0
+nuget System.Xml.ReaderWriter 4.3.0
+nuget System.Xml.XDocument 4.3.0
+nuget Unquote 3.2.0
+nuget xunit.core 2.2.0
