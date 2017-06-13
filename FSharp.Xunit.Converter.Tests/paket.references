@@ -1,5 +1,6 @@
 FsCheck.Xunit
 Microsoft.NETCore.Platforms
+Microsoft.CodeAnalysis.CSharp
 NETStandard.Library
 System.Net.Primitives
 System.ObjectModel

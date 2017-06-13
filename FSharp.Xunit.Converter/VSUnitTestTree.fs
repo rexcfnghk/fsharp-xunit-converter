@@ -1,8 +1,10 @@
 ﻿namespace FSharp.Xunit.Converter
 
 type VSUnitTestTree = 
-    | Empty
+    | UnitTest
 
 module VSUnitTestTree =
-    let parse s =
-        Empty
+    open Microsoft.CodeAnalysis.CSharp
+
+    let parse (syntaxTreeConverter: string -> CSharpSyntaxTree) s =
+        None

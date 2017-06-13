@@ -5,6 +5,7 @@ framework >= net47
 
 nuget FsCheck.Xunit 2.9.0
 nuget Microsoft.NETCore.Platforms 1.1.0
+nuget Microsoft.CodeAnalysis.CSharp 2.2.0
 nuget NETStandard.Library 1.6.1
 nuget System.Net.Primitives 4.3.0
 nuget System.ObjectModel 4.3.0
