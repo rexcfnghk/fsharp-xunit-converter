@@ -43,4 +43,31 @@ let ``Convert returns Some UnitTest when string is not empty`` () =
     let csharpSyntaxNode = syntaxTree.GetRoot ()
     let result = VSUnitTestTree.convert csharpSyntaxNode string
 
-    result =! Some UnitTest
+    test <@ Option.isSome result @>
+
+[<Fact>]
+let ``Convert returns Some UnitTest with correct namespaces when string is not empty`` () =
+    let string = """using System;
+                        using System.Collections.Generic;
+                        using System.Linq;
+                        using System.Text;
+                        using System.Threading.Tasks;
+                        using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+                        namespace Test
+                        {
+                            [TestClass]
+                            public class TestClass
+                            {
+                                [TestMethod]
+                                public void Test()
+                                {
+                                    Assert.IsTrue(true);
+                                }
+                            }
+                        }"""
+    let syntaxTree = RoslynParser.parse string
+    let csharpSyntaxNode = syntaxTree.GetRoot ()
+    let tree = VSUnitTestTree.convert csharpSyntaxNode string |> Option.get
+
+    List.length tree.Namespaces =! 6
