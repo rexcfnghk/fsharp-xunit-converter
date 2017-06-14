@@ -4,7 +4,11 @@ type VSUnitTestTree =
     | UnitTest
 
 module VSUnitTestTree =
-    open Microsoft.CodeAnalysis.CSharp
 
-    let parse (syntaxTreeConverter: string -> CSharpSyntaxTree) s =
-        None
+    open Microsoft.CodeAnalysis.CSharp
+    open Microsoft.CodeAnalysis.CSharp.Syntax
+
+    let convert (node: CSharpSyntaxNode) s =
+        if s <> ""
+        then Some UnitTest
+        else None
