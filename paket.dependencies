@@ -10,9 +10,6 @@ nuget NETStandard.Library 1.6.1
 nuget System.Net.Primitives 4.3.0
 nuget System.ObjectModel 4.3.0
 nuget System.Reflection.Primitives 4.3.0
-nuget System.Text.Encoding 4.3.0
-nuget System.Text.Encoding.Extensions 4.3.0
-nuget System.Xml.ReaderWriter 4.3.0
-nuget System.Xml.XDocument 4.3.0
 nuget Unquote 3.2.0
 nuget xunit.core 2.2.0
+

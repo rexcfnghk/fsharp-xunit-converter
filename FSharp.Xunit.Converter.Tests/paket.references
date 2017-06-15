@@ -5,9 +5,6 @@ NETStandard.Library
 System.Net.Primitives
 System.ObjectModel
 System.Reflection.Primitives
-System.Text.Encoding
-System.Text.Encoding.Extensions
-System.Xml.ReaderWriter
-System.Xml.XDocument
 Unquote
 xunit.core
+
