@@ -26,7 +26,17 @@ module VSUnitTestTree =
                 |> Seq.cast<UsingDirectiveSyntax>
                 |> Seq.map (fun m -> sprintf "%A" m.Name)
                 |> Seq.toList
-            let testClass = TestClassName "", TestClassAttributeName ""
+
+            let classDeclarationSyntax = 
+                compilationUnitSyntax.Members
+                |> Seq.collect (function :? NamespaceDeclarationSyntax as x -> x.Members :> seq<MemberDeclarationSyntax> | _ -> Seq.empty)
+                |> Seq.choose (function :? ClassDeclarationSyntax as x -> Some x | _ -> None)
+                |> Seq.exactlyOne
+            let testClass = 
+                TestClassName <| classDeclarationSyntax.Identifier.ToString(), 
+                classDeclarationSyntax.AttributeLists
+                |> Seq.filter (fun s -> let item : AttributeSyntax = s.Attributes.Item.[0] in item.Name.ToString() = "TestClassAttribute")
+                |> Seq.exactlyOne
             let csharpUnitTest = 
                 { Namespaces = namespaces
                   TestClass = testClass }
